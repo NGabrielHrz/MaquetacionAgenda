@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-05-2023 a las 00:20:48
+-- Tiempo de generación: 27-05-2023 a las 01:03:39
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -45,6 +45,25 @@ CREATE TABLE `agendatelefonica` (
 INSERT INTO `agendatelefonica` (`ruta_foto`, `ID`, `Nombre`, `Apellido`, `Correo`, `Celular`, `Compania`, `Parentesco`) VALUES
 ('fotos/2023-05-25 21-59-38-Frakma.jpg', 17, 'Néstor', 'Narvaez', 'vaservzsr@gmail.com', '98456120', 'Telcel', 'Escuela');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `user` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `contrasena` varchar(30) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `user`, `contrasena`) VALUES
+(3, 'yo', '1234');
+
 --
 -- Índices para tablas volcadas
 --
@@ -56,6 +75,12 @@ ALTER TABLE `agendatelefonica`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -64,6 +89,12 @@ ALTER TABLE `agendatelefonica`
 --
 ALTER TABLE `agendatelefonica`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
