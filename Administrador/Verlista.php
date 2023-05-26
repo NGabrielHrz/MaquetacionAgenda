@@ -30,28 +30,30 @@ require "conexion.php";
   <article class="article2">
   <table class="tablaU">
       <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>APELLIDO</th>
-        <th>CORREO</th>
-        <th>CELULAR</th>
-        <th>COMPAÑÍA</th>
-        <th>PARENTESCO</th>
-        <th>Eliminar</th>
+        <th align="center">Foto</th>
+        <th align="center">ID</th>
+        <th align="center">NOMBRE</th>
+        <th align="center">APELLIDO</th>
+        <th align="center">CORREO</th>
+        <th align="center">CELULAR</th>
+        <th align="center">COMPAÑÍA</th>
+        <th align="center">PARENTESCO</th>
+        <th align="center">Eliminar</th>
       </tr>
       <?php
       $todos_usuarios = "SELECT * FROM agendatelefonica ORDER BY ID ASC";
       $result = $conexion->query($todos_usuarios);
       while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["ID"] . "</td>";
-        echo "<td>" . $row["Nombre"] . "</td>";
-        echo "<td>" . $row["Apellido"] . "</td>";
-        echo "<td>" . $row["Correo"] . "</td>";
-        echo "<td>" . $row["Celular"] . "</td>";
-        echo "<td>" . $row["Compania"] . "</td>";
-        echo "<td>" . $row["Parentesco"] . "</td>";
-        echo "<td><a href='borrar.php?id=" . $row["ID"] . "'>Eliminar</a></td>";
+        echo "<td align='center'><img src='" . $row["ruta_foto"] . "'class='fotoChica'></td>";
+        echo "<td align='center'>" . $row["ID"] . "</td>";
+        echo "<td align='center'>" . $row["Nombre"] . "</td>";
+        echo "<td align='center'>" . $row["Apellido"] . "</td>";
+        echo "<td align='center'>" . $row["Correo"] . "</td>";
+        echo "<td align='center'>" . $row["Celular"] . "</td>";
+        echo "<td align='center'>" . $row["Compania"] . "</td>";
+        echo "<td align='center'>" . $row["Parentesco"] . "</td>";
+        echo "<td align='center'><a href='borrar.php?id=" . $row["ID"] . "'>Eliminar</a></td>";
         echo "</tr>";
       ?>
       <?php
@@ -63,4 +65,4 @@ require "conexion.php";
   <footer class="foot2"></footer>
 </body>
 </html>
-<td><img src="<?php echo $row["ruta_foto"];?>" class="fotoChica"></td>
+<!-- <td><img src="<?php echo $row["ruta_foto"];?>" class="fotoChica"></td> -->

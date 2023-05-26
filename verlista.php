@@ -27,29 +27,30 @@ require "Administrador/conexion.php";
     <a class="Menu2" href="index.php">Inicio</a>
   </nav>
   <article class="article2">
-    <table class="tablaU">
+  <table class="tablaU">
       <tr>
-        <th>ID</th>
-        <th>NOMBRE</th>
-        <th>APELLIDO</th>
-        <th>CORREO</th>
-        <th>CELULAR</th>
-        <th>COMPAÑÍA</th>
-        <th>PARENTESCO</th>
+        <th align="center">Foto</th>
+        <th align="center">ID</th>
+        <th align="center">NOMBRE</th>
+        <th align="center">APELLIDO</th>
+        <th align="center">CORREO</th>
+        <th align="center">CELULAR</th>
+        <th align="center">COMPAÑÍA</th>
+        <th align="center">PARENTESCO</th>
       </tr>
       <?php
       $todos_usuarios = "SELECT * FROM agendatelefonica ORDER BY ID ASC";
       $result = $conexion->query($todos_usuarios);
       while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row["ID"] . "</td>";
-        echo "<td>" . $row["Nombre"] . "</td>";
-        echo "<td>" . $row["Apellido"] . "</td>";
-        echo "<td>" . $row["Correo"] . "</td>";
-        echo "<td>" . $row["Celular"] . "</td>";
-        echo "<td>" . $row["Compania"] . "</td>";
-        echo "<td>" . $row["Parentesco"] . "</td>";
-        echo "</tr>";
+        echo "<td align='center'><img src='Administrador/" . $row["ruta_foto"] . "'class='fotoChica'></td>";
+        echo "<td align='center'>" . $row["ID"] . "</td>";
+        echo "<td align='center'>" . $row["Nombre"] . "</td>";
+        echo "<td align='center'>" . $row["Apellido"] . "</td>";
+        echo "<td align='center'>" . $row["Correo"] . "</td>";
+        echo "<td align='center'>" . $row["Celular"] . "</td>";
+        echo "<td align='center'>" . $row["Compania"] . "</td>";
+        echo "<td align='center'>" . $row["Parentesco"] . "</td>";
       ?>
       <?php
       }

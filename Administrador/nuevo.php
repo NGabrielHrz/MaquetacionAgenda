@@ -29,11 +29,13 @@ require "seguridad.php";
   </nav>
   <article class="article2">
     <br>
-    <form action="guardar_contacto.php" class="form" method="POST">
+    <form action="guardar_contacto.php" class="form" method="POST" enctype="multipart/form-data">
       <label class="generalLabel">Nombre:</label>
       <input type="text" name="Nombre" id="Nombre"><br>
       <label class="generalLabel">Apellido:</label>
       <input type="text" name="Apellido" id="Apellido"><br>
+      <label class="generalLabel">Agregar foto:</label>
+      <input type="file" name="imagen" id="imagen"><br>
       <label class="generalLabel">Email:</label>
       <input type="text" name="Email" id="Email"><br>
       <label class="generalLabel">Celular:</label>
